@@ -1,0 +1,6 @@
+db.sqlite3
+settings.ini
+*.pyc
+__pycache__/
+venv/
+.vscode/
