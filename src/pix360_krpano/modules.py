@@ -152,7 +152,7 @@ class KRPanoConverter:
                         assert res.getcode() == 200
                         content = res.read()
                         fo = ContentFile(content, name=f"{tile}_{maxzoom}_{y}_{x}.jpg")
-                        file = File.objects.create(conversion=self.conversion, file=fo)
+                        file = File.objects.create(conversion=self.conversion, file=fo, mime_type="image/jpeg")
                         r_array.append(file)
                         x += 1
                     except Exception as e:
@@ -187,7 +187,7 @@ class KRPanoConverter:
             res = HTTPRequest(cur).open()
             assert res.getcode() == 200
             fo = ContentFile(res.read())
-            file = File.objects.create(conversion=self.conversion, file=fo)
+            file = File.objects.create(conversion=self.conversion, file=fo, mime_type="image/jpeg")
             output += [file]
 
         return output
