@@ -3,12 +3,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pix360_krpano"
+name = "pix360_youtube"
 version = "0.0.1"
 authors = [
   { name="Kumi Systems e.U.", email="office@kumi.systems" },
 ]
-description = "krpano downloader module for PIX360"
+description = "YouTube downloader module for PIX360"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -16,10 +16,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+  "yt-dlp",
+]
 
 [project.urls]
-"Homepage" = "https://kumig.it/kumisystems/pix360-eyerevolution"
-"Bug Tracker" = "https://kumig.it/kumisystems/pix360-eyerevolution/issues"
+"Homepage" = "https://kumig.it/kumisystems/pix360-youtube"
+"Bug Tracker" = "https://kumig.it/kumisystems/pix360-youtube/issues"
 
 [project.entry-points."pix360downloader"]
-"pix360-krpano" = "pix360_krpano.modules:KRPanoDownloader"
+"pix360-youtube" = "pix360_youtube.modules:YouTubeDownloader"
